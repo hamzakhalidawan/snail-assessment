@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h4 class="text-center my-3">List View</h4>
+          <div class="card border-0">
+            <div class="card-body">
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <p>Locker ID:</p>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <p>9001</p>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong><p>Locker Name:</p></strong>
+                </div>
+                <div class="col-md-9">
+                  <p>Snail</p>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <p>Address:</p>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <p>1 Cres.RD, Hendon, CSB 172</p>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <p>Notes:</p>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <p>Snail's Office, second floor</p>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <p>Status:</p>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <canvas
+                    id="myChart"
+                    style="width: 100%; max-width: 600px"
+                  ></canvas>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <label for="" class="form-label">Workflow:</label>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option></option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <label for="" class="form-label">Postel:</label>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option></option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <p>Compartment Count:</p>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <p>9</p>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <p>Compartment Used:</p>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <p>3</p>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <p>Compartment Free:</p>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <p>5</p>
+                </div>
+              </div>
+              <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                  <strong>
+                    <p>Compartment Faulty:</p>
+                  </strong>
+                </div>
+                <div class="col-md-9">
+                  <p>1</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+      var xValues = ["Comp", "Used"];
+      var yValues = [50, 20];
+      var barColors = ["#b91d47", "#00aba9"];
+
+      new Chart("myChart", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: yValues,
+            },
+          ],
+        },
+        options: {
+          title: {
+            display: true,
+            text: "",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
