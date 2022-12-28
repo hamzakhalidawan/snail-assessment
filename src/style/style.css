@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+    /* background-color: #E5E5E5; */
+    background-color: #f5f5f5;
+}
+
+/* Lockers section */
+.show-lockers a {
+    text-decoration: none;
+    color: #000;
+}
+
+.show-lockers .card {
+    margin: 10px 0px;
+}
+
+.master-unit a {
+    text-decoration: none;
+    color: #000;
+}
+
+.status-div {
+    display: none;
+}
+
+.master-unit .card:hover .size {
+    display: none;
+}
+
+.master-unit .card:hover .status-div {
+    display: block;
+}
+
+.unit a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.box_shadow {
+    /* box-shadow: 3px 3px 3px gray !important; */
+    background-color: green;
+    color: #ffffff;
+}
