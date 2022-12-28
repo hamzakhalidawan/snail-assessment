@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="text-center my-5">
+      <p>Locker 9001</p>
+    </div>
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="text-center">
+                <span class="text-decoration-underline">Device Details</span>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <p>ID:</p>
+                </div>
+                <div class="col-6">
+                  <p>9100</p>
+                </div>
+                <div class="col-6">
+                  <p>Name:</p>
+                </div>
+                <div class="col-6">
+                  <p>Snail</p>
+                </div>
+                <div class="col-6">
+                  <p>Address:</p>
+                </div>
+                <div class="col-6">
+                  <p>1 Cres.RD, Hendon, CSB 172</p>
+                </div>
+                <div class="col-6">
+                  <p>Notes:</p>
+                </div>
+                <div class="col-6">
+                  <p>Snail's Office, second floor</p>
+                </div>
+                <div class="col-12">
+                  <!-- <p>Status</p>
+                  <p>Comp:50</p>
+                  <p>Used:20</p> -->
+                  <canvas
+                    id="myChart"
+                    style="width: 100%; max-width: 600px"
+                  ></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <div class="text-center mb-3">
+                <span class="text-decoration-underline">
+                  Device Configuration
+                </span>
+              </div>
+              <div class="row mb-3">
+                <div class="col-6">
+                  <label for="" class="form-label">Workflow:</label>
+                </div>
+                <div class="col-6">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option></option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <label for="" class="form-label">Postel:</label>
+                </div>
+                <div class="col-6">
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option></option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <p>Empty</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <p>Occupied</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="text-center">
+                        <span
+                          style="
+                            border: 1px solid black;
+                            border-radius: 50px;
+                            padding: 5px;
+                          "
+                        >
+                          S
+                        </span>
+                      </div>
+                      <div class="text-center my-2">
+                        <button class="btn btn-info">English</button>
+                        <button class="btn btn-secondary">Frames</button>
+                      </div>
+                      <div class="text-center">
+                        <p>Snail's Office</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 mb-3">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <p>Faulty</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 mb-3">
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <p>Occupied</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-body">
+                      <p>Occupied</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="card" style="min-height: 165px">
+                    <div class="card-body"></div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <a href="locker-listview.html" class="btn btn-primary"
+                    >List View</a
+                  >
+                  <a href="#" class="btn btn-primary">Deposit View</a>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#"><</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">></a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
