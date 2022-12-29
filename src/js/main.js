@@ -32,7 +32,7 @@ function locationInfo() {
     var url = rootUrl + "?type=getCities&countryId=" + "&stateId=" + id;
     var method = "post";
     var data = {};
-    jQuery(".cities").find("option:eq(0)").html("Please wait..");
+    jQuery(".cities").find("option:eq(0)").html("loading.....");
     call.send(data, url, method, function (data) {
       jQuery(".cities").find("option:eq(0)").html("Select City");
       $("#cityId").each(function () {
@@ -64,7 +64,7 @@ function locationInfo() {
     var url = rootUrl + "?type=getStates&countryId=" + id;
     var method = "post";
     var data = {};
-    jQuery(".states").find("option:eq(0)").html("Please wait..");
+    jQuery(".states").find("option:eq(0)").html("loading.....");
     call.send(data, url, method, function (data) {
       jQuery(".states").find("option:eq(0)").html("Select State");
       $("#stateId").each(function () {
@@ -115,6 +115,7 @@ jQuery(function () {
   var loc = new locationInfo();
   loc.getCountries();
   jQuery(".countries").on("change", function (ev) {
+    $(".spinner-border").show();
     var countryId = jQuery("option:selected", this).attr("countryid");
     if (countryId != "") {
       loc.getStates(countryId);
