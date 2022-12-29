@@ -35,6 +35,12 @@ function locationInfo() {
     jQuery(".cities").find("option:eq(0)").html("Please wait..");
     call.send(data, url, method, function (data) {
       jQuery(".cities").find("option:eq(0)").html("Select City");
+      $("#cityId").each(function () {
+        $(this).select2({
+          theme: "bootstrap-5",
+          dropdownParent: $(this).parent(),
+        });
+      });
       var listlen = Object.keys(data["result"]).length;
 
       if (listlen > 0) {
@@ -61,7 +67,12 @@ function locationInfo() {
     jQuery(".states").find("option:eq(0)").html("Please wait..");
     call.send(data, url, method, function (data) {
       jQuery(".states").find("option:eq(0)").html("Select State");
-
+      $("#stateId").each(function () {
+        $(this).select2({
+          theme: "bootstrap-5",
+          dropdownParent: $(this).parent(),
+        });
+      });
       jQuery.each(data["result"], function (key, val) {
         var option = jQuery("<option />");
         option.attr("value", val.name).text(val.name);
