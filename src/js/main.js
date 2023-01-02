@@ -110,18 +110,23 @@ function locationInfo() {
     });
   };
 }
-
+$(document).ready(function () {
+  var loc = new locationInfo();
+  loc.getStates(39);
+});
 jQuery(function () {
   var loc = new locationInfo();
   loc.getCountries();
   jQuery(".countries").on("change", function (ev) {
-    $(".spinner-border").show();
     var countryId = jQuery("option:selected", this).attr("countryid");
     if (countryId != "") {
       loc.getStates(countryId);
     } else {
       jQuery(".states option:gt(0)").remove();
     }
+  });
+  $(document).ready(function () {
+    loc.getCities(866);
   });
   jQuery(".states").on("change", function (ev) {
     var stateId = jQuery("option:selected", this).attr("stateid");
@@ -133,26 +138,27 @@ jQuery(function () {
   });
 });
 // CHART
+if (typeof Chart != "undefined") {
+  var xValues = ["Comp", "Used"];
+  var yValues = [50, 20];
+  var barColors = ["#b91d47", "#00aba9"];
 
-var xValues = ["Comp", "Used"];
-var yValues = [50, 20];
-var barColors = ["#b91d47", "#00aba9"];
-
-new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [
-      {
-        backgroundColor: barColors,
-        data: yValues,
-      },
-    ],
-  },
-  options: {
-    title: {
-      display: true,
-      text: "Status",
+  new Chart("myChart", {
+    type: "pie",
+    data: {
+      labels: xValues,
+      datasets: [
+        {
+          backgroundColor: barColors,
+          data: yValues,
+        },
+      ],
     },
-  },
-});
+    options: {
+      title: {
+        display: true,
+        text: "Status",
+      },
+    },
+  });
+}
