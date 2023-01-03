@@ -25,16 +25,22 @@ function ajaxCall() {
 function locationInfo() {
   var rootUrl = "https://geodata.phplift.net/api/index.php";
   var call = new ajaxCall();
-  this.getCities = function (id) {
+  this.getCities = function (id, select_city) {
     jQuery(".cities option:gt(0)").remove();
     //get additional fields
 
     var url = rootUrl + "?type=getCities&countryId=" + "&stateId=" + id;
     var method = "post";
     var data = {};
-    jQuery(".cities").find("option:eq(0)").html("loading.....");
     call.send(data, url, method, function (data) {
-      jQuery(".cities").find("option:eq(0)").html("Select City");
+      title = jQuery(".cities").find("option:eq(0)").val();
+      state = jQuery(".states").children("option").filter(":selected").val();
+      console.log("title.........", title);
+      if (state == "Ontario") {
+        jQuery(".cities").find("option:eq(0)").html("Mississauga");
+      } else {
+        jQuery(".cities").find("option:eq(0)").html("Select City");
+      }
       $("#cityId").each(function () {
         $(this).select2({
           theme: "bootstrap-5",
@@ -49,6 +55,16 @@ function locationInfo() {
           option.attr("value", val.name).text(val.name);
           jQuery(".cities").append(option);
         });
+        // if (select_city) {
+        //   const all_options = $("#cityId").children();
+        //   const single_option = all_options.filter((index, city_option) => {
+        //     console.log("if condition", city_option.value);
+        //     if (city_option.value == "Mississauga") {
+        //       console.log("city matched", city_option.value == "Mississauga");
+        //       return city_option;
+        //     }
+        //   });
+        // }
       }
 
       jQuery(".cities").prop("disabled", false);
@@ -126,12 +142,17 @@ jQuery(function () {
     }
   });
   $(document).ready(function () {
-    loc.getCities(866);
+    loc.getCities(866, true);
   });
   jQuery(".states").on("change", function (ev) {
     var stateId = jQuery("option:selected", this).attr("stateid");
+    jQuery(".cities").find("option:eq(0)").html("Select City");
     if (stateId != "") {
-      loc.getCities(stateId);
+      if (stateId == 866) {
+        loc.getCities(stateId, true);
+      } else {
+        loc.getCities(stateId, false);
+      }
     } else {
       jQuery(".cities option:gt(0)").remove();
     }
