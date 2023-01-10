@@ -1,11 +1,11 @@
 function ajaxCall() {
   this.send = function (data, url, method, success, type) {
     type = "json";
-    var successRes = function (data) {
+    const successRes = function (data) {
       success(data);
     };
 
-    var errorRes = function (xhr, ajaxOptions, thrownError) {
+    const errorRes = function (xhr, ajaxOptions, thrownError) {
       console.log(
         thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText
       );
@@ -55,16 +55,6 @@ function locationInfo() {
           option.attr("value", val.name).text(val.name);
           jQuery(".cities").append(option);
         });
-        // if (select_city) {
-        //   const all_options = $("#cityId").children();
-        //   const single_option = all_options.filter((index, city_option) => {
-        //     console.log("if condition", city_option.value);
-        //     if (city_option.value == "Mississauga") {
-        //       console.log("city matched", city_option.value == "Mississauga");
-        //       return city_option;
-        //     }
-        //   });
-        // }
       }
 
       jQuery(".cities").prop("disabled", false);
@@ -82,7 +72,7 @@ function locationInfo() {
     var data = {};
     jQuery(".states").find("option:eq(0)").html("loading.....");
     call.send(data, url, method, function (data) {
-      jQuery(".states").find("option:eq(0)").html("Select State");
+      jQuery(".states").find("option:eq(0)").html("Ontario");
       $("#stateId").each(function () {
         $(this).select2({
           theme: "bootstrap-5",
