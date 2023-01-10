@@ -23,8 +23,8 @@ function ajaxCall() {
 }
 
 function locationInfo() {
-  var rootUrl = "https://geodata.phplift.net/api/index.php";
-  var call = new ajaxCall();
+  const rootUrl = "https://geodata.phplift.net/api/index.php";
+  const call = new ajaxCall();
   this.getCities = function (id, select_city) {
     jQuery(".cities option:gt(0)").remove();
     //get additional fields
@@ -47,7 +47,7 @@ function locationInfo() {
           dropdownParent: $(this).parent(),
         });
       });
-      var listlen = Object.keys(data["result"]).length;
+      const listlen = Object.keys(data["result"]).length;
 
       if (listlen > 0) {
         jQuery.each(data["result"], function (key, val) {
@@ -65,7 +65,7 @@ function locationInfo() {
     jQuery(".states option:gt(0)").remove();
     jQuery(".cities option:gt(0)").remove();
     //get additional fields
-    var stateClasses = jQuery("#stateId").attr("class");
+    const stateClasses = jQuery("#stateId").attr("class");
 
     var url = rootUrl + "?type=getStates&countryId=" + id;
     var method = "post";
@@ -93,33 +93,16 @@ function locationInfo() {
   searchedArray = [];
 
   this.getCountries = function () {
-    var url = rootUrl + "?type=getCountries";
-    var method = "post";
-    var data = {};
-    // jQuery(".countries").find("option:eq(0)").html("Please wait..");
-    call.send(data, url, method, function (data) {
-      this.countries = data?.result;
-      this.searchedArray = data?.result;
+    jQuery.each(searchedArray, function (key, val) {
+      var option = jQuery("<option />");
 
-      console.log("countiress.......", this.countries);
-      // jQuery(".countries").find("option:eq(0)").html("Canada");
+      option.attr("value", val.name).text(val.name);
+      option.attr("countryid", val.id);
 
-      jQuery.each(searchedArray, function (key, val) {
-        var option = jQuery("<option />");
-
-        option.attr("value", val.name).text(val.name);
-        option.attr("countryid", val.id);
-
-        jQuery("#countryId").append(option);
-      });
-      // jQuery(".countries").prop("disabled",false);
+      jQuery("#countryId").append(option);
     });
   };
 }
-$(document).ready(function () {
-  var loc = new locationInfo();
-  loc.getStates(39);
-});
 jQuery(function () {
   var loc = new locationInfo();
   loc.getCountries();
@@ -132,10 +115,23 @@ jQuery(function () {
     }
   });
   $(document).ready(function () {
+    var loc = new locationInfo();
+    loc.getStates(39);
     loc.getCities(866, true);
+    var page_name = window.location.href.split("/").pop();
+    var active_page = page_name.split(".")[0];
+    $(".nav-item")
+      .find("#" + active_page)
+      .addClass("active");
+    $(".nav-item a").click(function () {
+      $(".nav-item a.active").removeClass("active");
+      $(".nav-item")
+        .find("#" + active_page)
+        .addClass("active");
+    });
   });
   jQuery(".states").on("change", function (ev) {
-    var stateId = jQuery("option:selected", this).attr("stateid");
+    const stateId = jQuery("option:selected", this).attr("stateid");
     jQuery(".cities").find("option:eq(0)").html("Select City");
     if (stateId != "") {
       if (stateId == 866) {
@@ -175,15 +171,15 @@ if (typeof Chart != "undefined") {
 }
 // ACTIVE NAVBAR
 $(document).ready(function () {
-  var page_name = window.location.href.split("/").pop();
-  var active_page = page_name.split(".")[0];
-  $(".nav-item")
-    .find("#" + active_page)
-    .addClass("active");
-  $(".nav-item a").click(function () {
-    $(".nav-item a.active").removeClass("active");
-    $(".nav-item")
-      .find("#" + active_page)
-      .addClass("active");
-  });
+  // var page_name = window.location.href.split("/").pop();
+  // var active_page = page_name.split(".")[0];
+  // $(".nav-item")
+  //   .find("#" + active_page)
+  //   .addClass("active");
+  // $(".nav-item a").click(function () {
+  //   $(".nav-item a.active").removeClass("active");
+  //   $(".nav-item")
+  //     .find("#" + active_page)
+  //     .addClass("active");
+  // });
 });
