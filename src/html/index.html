@@ -27,51 +27,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Project Snail</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link text-dark active-tab" href="index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="locker-showpage.html"
-                  >Locker's Showpage</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link text-dark"
-                  href="compartment-interaction.html"
-                >
-                  Compartment Interaction
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="relay-mapping.html"
-                  >Relay Mapping</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <div id="header"></div>
     <!-- Lockers Show Section -->
     <div class="container-fluid">
       <div class="text-center mt-5 mb-3">
@@ -738,9 +694,8 @@
       </div>
     </div>
     <script src="../js/jquery.js"></script>
-    <script src="../js/main.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="../js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
       $("#countryId").each(function () {
@@ -748,6 +703,11 @@
           theme: "bootstrap-5",
           dropdownParent: $(this).parent(),
         });
+      });
+    </script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
       });
     </script>
   </body>

@@ -14,49 +14,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Project Snail</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="locker-showpage.html"
-                  >Locker's Showpage</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link text-dark active-tab"
-                  href="compartment-interaction.html"
-                >
-                  Compartment Interaction
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="relay-mapping.html"
-                  >Relay Mapping</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <div id="header"></div>
     <div class="container mt-5 master-unit">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-6">
@@ -255,8 +213,13 @@
         </div>
       </div>
     </div>
-    <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/main.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+      });
+    </script>
   </body>
 </html>

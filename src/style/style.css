@@ -15,7 +15,7 @@ body {
     box-shadow: 3px 3px 3px darkgrey;
 }
 
-.navbar .active-tab {
+.active {
     color: red !important;
 }
 
@@ -55,4 +55,11 @@ body {
     /* box-shadow: 3px 3px 3px gray !important; */
     background-color: green;
     color: #ffffff;
+}
+
+/* MEDIA Queries */
+@media(max-width:540px) {
+    .navbar {
+        height: auto !important;
+    }
 }
