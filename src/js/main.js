@@ -169,17 +169,3 @@ if (typeof Chart != "undefined") {
     },
   });
 }
-// ACTIVE NAVBAR
-$(document).ready(function () {
-  // var page_name = window.location.href.split("/").pop();
-  // var active_page = page_name.split(".")[0];
-  // $(".nav-item")
-  //   .find("#" + active_page)
-  //   .addClass("active");
-  // $(".nav-item a").click(function () {
-  //   $(".nav-item a.active").removeClass("active");
-  //   $(".nav-item")
-  //     .find("#" + active_page)
-  //     .addClass("active");
-  // });
-});
